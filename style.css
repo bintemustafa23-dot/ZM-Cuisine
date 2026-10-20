@@ -1,0 +1,3833 @@
+/* =========================================================
+   ZM CUISINE - FINAL STYLE
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffaf5;
+    color: #5a321f;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 5%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(90, 50, 31, 0.08);
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: 85px;
+    object-fit: contain;
+    border-radius: 55%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+nav a {
+    position: relative;
+    color: #5a321f;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #c86b32;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #c86b32;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================================================
+   CART HEADER BUTTON
+   ========================================================= */
+
+.cart-btn {
+    flex-shrink: 0;
+    border: none;
+    background: #c86b32;
+    color: #ffffff;
+    padding: 11px 19px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(200, 107, 50, 0.20);
+    transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+    background: #a95122;
+    transform: translateY(-2px);
+}
+
+#cartCount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 5px;
+    margin-left: 4px;
+    background: #ffffff;
+    color: #c86b32;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+        radial-gradient(circle at top right, rgba(200, 107, 50, 0.10), transparent 35%),
+        linear-gradient(135deg, #fffaf5 0%, #f8eee5 100%);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 580px;
+}
+
+.welcome {
+    color: #c86b32;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 6vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    color: #806657;
+    font-size: 17px;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.main-btn,
+.second-btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.main-btn {
+    background: #c86b32;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.main-btn:hover {
+    background: #a95122;
+    transform: translateY(-2px);
+}
+
+.second-btn {
+    background: transparent;
+    color: #5a321f;
+    border: 1px solid #c86b32;
+    cursor: pointer;
+}
+
+.second-btn:hover {
+    background: #c86b32;
+    color: #ffffff;
+}
+
+.hero-image {
+    flex: 1;
+    min-height: 450px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-food-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(90, 50, 31, 0.12);
+    overflow: hidden;
+}
+
+.pizza-card {
+    width: min(430px, 85%);
+    transform: rotate(3deg);
+}
+
+.small-food {
+    position: absolute;
+    width: 180px;
+    right: 2%;
+    bottom: 0;
+    transform: rotate(-6deg);
+}
+
+.hero-food-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* =========================================================
+   PROFESSIONAL HEADINGS
+   ========================================================= */
+
+.section-small {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #c86b32;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-small::before,
+.section-small::after {
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: #c86b32;
+    border-radius: 10px;
+}
+
+section h2 {
+    position: relative;
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 13px auto 0;
+    background: #c86b32;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   SPECIALITIES
+   ========================================================= */
+
+.special {
+    padding: 85px 7%;
+    background: #ffffff;
+}
+
+.special-container {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.special-card {
+    background: #fffaf5;
+    border: 1px solid #ead8c4;
+    border-radius: 18px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.special-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(90, 50, 31, 0.10);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.special-card h3 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu-section {
+    padding: 90px 7%;
+    background: #fffaf5;
+}
+
+.menu-container {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.food-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(90, 50, 31, 0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.food-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 32px rgba(90, 50, 31, 0.13);
+}
+
+.food-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: #f5eee7;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.04);
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    color: #5a3220;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    min-height: 51px;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   PRICE / QUANTITY BOXES
+   ========================================================= */
+
+.food-quantity,
+.daily-bottom,
+.serving-container,
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    background: #fffaf2;
+    border: 1px solid #ead8c4;
+    border-radius: 10px;
+}
+
+.food-quantity {
+    margin: 10px 0 0;
+}
+
+.food-quantity span,
+.daily-bottom span,
+.serving-container span,
+.quantity span {
+    flex: 1;
+    color: #38210b;
+    font-size: 18px;
+    font-weight:800;
+    white-space: nowrap;
+}
+
+.food-quantity strong,
+.daily-bottom strong,
+.serving-container strong,
+.quantity strong {
+    color: #442f1c;
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   ORDER BUTTONS
+   ========================================================= */
+
+.deal-btn,
+.daily-order-btn {
+    display: block;
+    width: 100%;
+    margin: 10px auto 0;
+    background: #c86b32;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.deal-btn:hover,
+.daily-order-btn:hover {
+    background: #a95122;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   DAILY DELIGHTS
+   ========================================================= */
+
+.daily-delights-section {
+    padding: 90px 8%;
+    background: #fffaf2;
+}
+
+.daily-delights-container {
+    max-width: 1200px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.daily-card {
+    background: #ffffff;
+    border: 1px solid #ead8c4;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(90, 50, 31, 0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.daily-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(90, 50, 31, 0.15);
+}
+
+.daily-image {
+    width: 100%;
+    height: 220px;
+    background: #f1e2d0;
+    overflow: hidden;
+}
+
+.daily-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.daily-info {
+    padding: 20px;
+}
+
+.daily-info h3 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.daily-info p {
+    color: #4b2814;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 45px;
+    margin-bottom: 18px;
+}
+
+.daily-bottom {
+    margin-top: 0;
+}
+
+.daily-bottom span {
+    color: #442f1c;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.daily-bottom small {
+    color: #5a3a27;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.daily-order-btn {
+    margin-top: 10px;
+}
+
+/* =========================================================
+   DEALS & DESSERTS
+   ========================================================= */
+
+.deals-section {
+    padding: 90px 7%;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #c86b32;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.section-heading p::before,
+.section-heading p::after {
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: #c86b32;
+    border-radius: 10px;
+}
+
+.section-heading h2 {
+    margin: 10px 0 12px;
+}
+
+.section-heading > span {
+    color: #806657;
+    font-size: 15px;
+}
+
+.deals-container {
+    max-width: 950px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.deal-card {
+    background: #fffaf5;
+    border: 1px solid #ead8c4;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(90, 50, 31, 0.07);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.deal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 32px rgba(90, 50, 31, 0.12);
+}
+
+.deal-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.deal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deal-info {
+    padding: 22px;
+}
+
+.deal-info h3 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* =========================================================
+   SERVING
+   ========================================================= */
+
+.serving-container {
+    margin-top: 10px;
+}
+
+.serving-container span {
+    color: #442f1c;
+}
+
+.serving-container strong {
+    color: #442f1c;
+}
+
+/* =========================================================
+   EGG PUDDING
+   ========================================================= */
+
+.quantity-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.quantity {
+    margin: 0;
+    border: 1px solid #ead8c4;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s ease;
+}
+
+.quantity:hover,
+.quantity.selected {
+    border-color: #c86b32;
+    background: #fdf0e6;
+}
+
+.pudding-note {
+    text-align: center;
+    color: #806657;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* =========================================================
+   DEAL PRICE
+   ========================================================= */
+
+.deal-bottom {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 15px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #fffaf2;
+    border: 1px solid #ead8c4;
+    border-radius: 10px;
+}
+
+.deal-bottom .deal-price {
+    color: #442f1c;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   FULL MEAL MENU
+   ========================================================= */
+
+.full-meal-section {
+    padding: 90px 6%;
+    background: #fffaf5;
+    text-align: center;
+}
+
+.full-meal-section > h2 {
+    margin-bottom: 50px;
+}
+
+.meal-category {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.meal-category h3 {
+    position: relative;
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 0 28px;
+    padding: 0 0 12px 14px;
+    border-bottom: 2px solid #ead8c4;
+}
+
+.meal-category h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 4px;
+    height: 28px;
+    background: #c86b32;
+    border-radius: 5px;
+}
+
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.meal-card {
+    background: #ffffff;
+    border: 1px solid #ead8c4;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 5px 16px rgba(90, 50, 31, 0.08);
+    transition: 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+}
+
+.meal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(90, 50, 31, 0.14);
+}
+
+.meal-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 11px;
+    margin-bottom: 15px;
+}
+
+.meal-card h4 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.35;
+    margin: 8px 0 5px;
+    font-weight: 700;
+}
+
+.meal-card .serving {
+    color: #c86b32;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0 8px;
+}
+
+.meal-price {
+    color: #442f1c;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 8px 0 14px;
+}
+
+.meal-card button {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: #c86b32;
+    color: #ffffff;
+    padding: 11px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.meal-card button:hover {
+    background: #a95324;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+    padding: 100px 7%;
+    background: #f5e8dc;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 760px;
+    margin: auto;
+}
+
+.about h2 {
+    margin-bottom: 25px;
+}
+
+.about-content > p:not(.section-small) {
+    color: #806657;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    padding: 90px 7%;
+    background: #fffaf5;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 18px;
+}
+
+.contact > p:not(.section-small) {
+    color: #806657;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #5a321f;
+    background: #ffffff;
+    border: 1px solid #ead8c4;
+    padding: 11px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    background: #c86b32;
+    border-color: #c86b32;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 38px 7%;
+    background: #5a321f;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* =========================================================
+   FOOD POPUP
+   ========================================================= */
+
+.food-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 25, 15, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.food-modal.active {
+    display: flex;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.food-modal-box {
+    position: relative;
+    width: min(800px, 100%);
+    max-height: 90vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fffaf5;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.food-modal-image {
+    min-height: 400px;
+    background: #f5eee7;
+}
+
+.food-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.food-modal-content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-label {
+    color: #c86b32;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.food-modal-content h2 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+#modalFoodDescription {
+    color: #806657;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.modal-food-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-food-details > div {
+    padding: 12px;
+    background: #fffaf2;
+    border: 1px solid #ead8c4;
+    border-radius: 10px;
+}
+
+.modal-food-details span {
+    display: block;
+    color: #806657;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.modal-food-details strong {
+    color: #442f1c;
+    font-size: 16px;
+}
+
+.modal-order-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: #c86b32;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-order-btn:hover {
+    background: #a95122;
+}
+
+.food-modal-close,
+.cart-close,
+.checkout-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5a321f;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 3px 12px rgba(90, 50, 31, 0.15);
+}
+
+/* =========================================================
+   CART
+   ========================================================= */
+
+.cart-overlay,
+.checkout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 25, 15, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10000;
+}
+
+.cart-overlay.active,
+.checkout-overlay.active {
+    display: flex;
+}
+
+.cart-box {
+    position: relative;
+    width: min(750px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffaf5;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.cart-header h2,
+.checkout-heading h2 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #806657;
+    padding: 35px 10px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 75px 1fr auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ead8c4;
+}
+
+.cart-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.cart-item-info h3 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.cart-item-info p {
+    color: #806657;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.cart-controls button {
+    border: 1px solid #ead8c4;
+    background: #ffffff;
+    color: #5a321f;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-controls button:hover {
+    background: #c86b32;
+    color: #ffffff;
+}
+
+.cart-controls .remove-item {
+    width: auto;
+    height: auto;
+    border: none;
+    background: transparent;
+    color: #c86b32;
+    border-radius: 0;
+    margin-left: 5px;
+}
+
+.cart-item-total {
+    color: #442f1c;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    border-top: 1px solid #ead8c4;
+    padding-top: 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    color: #806657;
+}
+
+.summary-row strong {
+    color: #442f1c;
+}
+
+.delivery-row strong {
+    color: #c86b32;
+    font-size: 14px;
+}
+
+.grand-total-row {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkout-btn,
+.place-order-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #c86b32;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover,
+.place-order-btn:hover {
+    background: #a95122;
+}
+
+/* =========================================================
+   CHECKOUT
+   ========================================================= */
+
+.checkout-box {
+    position: relative;
+    width: min(700px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #fffaf5;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.checkout-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.checkout-heading p:last-child {
+    color: #806657;
+    font-size: 14px;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    color: #5a321f;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ead8c4;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #5a321f;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #c86b32;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+    color: #806657;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.checkout-order-box {
+    margin-top: 8px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #ead8c4;
+    border-radius: 14px;
+}
+
+.checkout-order-box h3 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 12px;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0e4d8;
+    color: #806657;
+    font-size: 14px;
+}
+
+.checkout-item strong {
+    color: #442f1c;
+    white-space: nowrap;
+}
+
+.checkout-total {
+    margin-top: 12px;
+}
+
+.checkout-total > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 6px 0;
+    color: #806657;
+    font-size: 14px;
+}
+
+.checkout-total strong {
+    color: #442f1c;
+}
+
+.checkout-grand {
+    margin-top: 5px;
+    padding-top: 10px !important;
+    border-top: 1px solid #ead8c4;
+    color: #5a321f !important;
+    font-size: 17px !important;
+    font-weight: bold;
+}
+
+.checkout-grand strong {
+    color: #c86b32;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .header {
+        padding-left: 4%;
+        padding-right: 4%;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .cart-btn {
+        padding: 10px 15px;
+    }
+
+    .menu-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .special-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .daily-delights-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 10px 5%;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 90px;
+        height: 80px;
+    }
+
+    nav {
+        gap: 9px 14px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .cart-btn {
+        font-size: 13px;
+        padding: 9px 15px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 6%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        min-height: 330px;
+    }
+
+    .pizza-card {
+        width: 75%;
+    }
+
+    .small-food {
+        width: 130px;
+        right: 3%;
+    }
+
+    .section-small {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .section-small::before,
+    .section-small::after,
+    .section-heading p::before,
+    .section-heading p::after {
+        width: 22px;
+    }
+
+    section h2 {
+        font-size: 31px;
+    }
+
+    .special,
+    .menu-section,
+    .deals-section,
+    .contact {
+        padding: 65px 5%;
+    }
+
+    .daily-delights-section {
+        padding: 65px 5%;
+    }
+
+    .about {
+        padding: 65px 5%;
+    }
+
+    .special-container,
+    .menu-container,
+    .deals-container,
+    .daily-delights-container,
+    .meal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-category h3 {
+        font-size: 21px;
+    }
+
+    .full-meal-section {
+        padding: 65px 5%;
+    }
+
+    .food-modal-box {
+        grid-template-columns: 1fr;
+        max-height: 92vh;
+        overflow-y: auto;
+    }
+
+    .food-modal-image {
+        min-height: 230px;
+        height: 230px;
+    }
+
+    .food-modal-content {
+        padding: 25px;
+    }
+
+    .food-modal-content h2 {
+        font-size: 25px;
+    }
+
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .checkout-box {
+        padding: 25px 20px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    nav {
+        gap: 7px 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .food-image {
+        height: 240px;
+    }
+
+    .deal-image {
+        height: 250px;
+    }
+
+    .food-quantity,
+    .daily-bottom,
+    .serving-container,
+    .quantity {
+        padding: 9px 12px;
+    }
+
+    .food-quantity span,
+    .daily-bottom span,
+    .serving-container span,
+    .quantity span,
+    .food-quantity strong,
+    .daily-bottom strong,
+    .serving-container strong,
+    .quantity strong {
+        font-size: 14px;
+    }
+
+    .modal-food-details {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-box {
+        padding: 25px 15px;
+    }
+
+    .cart-item {
+        grid-template-columns: 60px 1fr;
+    }
+
+    .cart-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart-item-total {
+        grid-column: 2;
+    }
+}
+/* =================================
+   ZM CUISINE - CIRCULAR HERO DESIGN
+================================= */
+
+.hero {
+    min-height: 650px;
+    padding: 65px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(200, 107, 50, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fffaf5,
+            #f5e7da
+        );
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 540px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero .welcome {
+    color: #c86b32;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+.hero .hero-text {
+    color: #806657;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 450px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* FOOD IMAGE AREA */
+
+.hero-image {
+    flex: 1;
+    width: 100%;
+    max-width: 570px;
+    min-height: 490px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+/* CIRCULAR IMAGE FRAMES */
+
+.hero-food-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    padding: 7px;
+
+    background: #fffaf5;
+    border: 3px solid #d9ad8c;
+
+    box-shadow:
+        0 12px 30px rgba(90, 50, 31, 0.15),
+        0 0 0 6px rgba(255, 255, 255, 0.55);
+
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.hero-food-circle:hover {
+    transform: scale(1.06);
+}
+
+.hero-food-circle img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* INDIVIDUAL IMAGE POSITIONS */
+
+.circle-pizza {
+    grid-column: 2 / 5;
+    grid-row: 1 / 4;
+    width: 230px;
+    height: 230px;
+    z-index: 2;
+}
+
+.circle-paratha {
+    grid-column: 5 / 7;
+    grid-row: 1 / 3;
+    width: 145px;
+    height: 145px;
+    z-index: 3;
+}
+
+.circle-kofta {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+    width: 150px;
+    height: 150px;
+    z-index: 3;
+}
+
+.circle-kebab {
+    grid-column: 4 / 7;
+    grid-row: 3 / 6;
+    width: 190px;
+    height: 190px;
+    z-index: 2;
+}
+
+.circle-pudding {
+    grid-column: 2 / 5;
+    grid-row: 5 / 7;
+    width: 155px;
+    height: 155px;
+    z-index: 3;
+}
+
+/* TABLET RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 55px 5%;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero-image {
+        min-height: 420px;
+    }
+
+    .circle-pizza {
+        width: 190px;
+        height: 190px;
+    }
+
+    .circle-paratha {
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle-kofta {
+        width: 125px;
+        height: 125px;
+    }
+
+    .circle-kebab {
+        width: 155px;
+        height: 155px;
+    }
+
+    .circle-pudding {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: auto;
+        padding: 55px 6% 35px;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero .hero-text {
+        font-size: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 430px;
+        min-height: 380px;
+        margin: 0 auto;
+    }
+
+    .circle-pizza {
+        width: 175px;
+        height: 175px;
+    }
+
+    .circle-paratha {
+        width: 110px;
+        height: 110px;
+    }
+
+    .circle-kofta {
+        width: 115px;
+        height: 115px;
+    }
+
+    .circle-kebab {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle-pudding {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-image {
+        min-height: 320px;
+    }
+
+    .circle-pizza {
+        width: 145px;
+        height: 145px;
+    }
+
+    .circle-paratha {
+        width: 90px;
+        height: 90px;
+    }
+
+    .circle-kofta {
+        width: 95px;
+        height: 95px;
+    }
+
+    .circle-kebab {
+        width: 115px;
+        height: 115px;
+    }
+
+    .circle-pudding {
+        width: 100px;
+        height: 100px;
+    }
+}
+```css
+/* =========================================
+   HERO BANNER - FULLER & RICHER DESIGN
+========================================= */
+
+.hero {
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 15px;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(200, 107, 50, 0.17),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(217, 173, 140, 0.15),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #fffaf5, #f3e3d5);
+}
+
+.hero-content {
+    flex: 0 0 44%;
+}
+
+.hero-image {
+    flex: 0 0 54%;
+    max-width: 650px;
+    min-height: 550px;
+}
+
+/* Larger Food Circles */
+
+.circle-pizza {
+    width: 255px;
+    height: 255px;
+}
+
+.circle-paratha {
+    width: 165px;
+    height: 165px;
+}
+
+.circle-kofta {
+    width: 170px;
+    height: 170px;
+}
+
+.circle-kebab {
+    width: 215px;
+    height: 215px;
+}
+
+.circle-pudding {
+    width: 175px;
+    height: 175px;
+}
+
+/* Elegant Image Borders */
+
+.hero-food-circle {
+    border: 4px solid #fffaf5;
+
+    box-shadow:
+        0 0 0 2px #d9ad8c,
+        0 15px 35px rgba(90, 50, 31, 0.18);
+}
+
+/* Heading Improvements */
+
+.hero h1 {
+    text-shadow: 1px 2px 0 rgba(217, 173, 140, 0.12);
+}
+
+.hero .welcome {
+    display: inline-block;
+    padding: 9px 14px;
+    border-radius: 20px;
+    background: #f2dfcf;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   NAVIGATION HEADINGS - LARGER & PROFESSIONAL
+========================================= */
+
+header nav a,
+.navbar nav a,
+.nav-links a {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover,
+.navbar nav a:hover,
+.nav-links a:hover {
+    color: #c86b32;
+}
+
+/* =========================================
+   MOBILE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero-content {
+        flex: 1;
+    }
+
+    .hero-image {
+        flex: 1;
+        min-height: 400px;
+    }
+
+    .circle-pizza {
+        width: 175px;
+        height: 175px;
+    }
+
+    .circle-paratha {
+        width: 110px;
+        height: 110px;
+    }
+
+    .circle-kofta {
+        width: 115px;
+        height: 115px;
+    }
+
+    .circle-kebab {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle-pudding {
+        width: 120px;
+        height: 120px;
+    }
+
+    header nav a,
+    .navbar nav a,
+    .nav-links a {
+        font-size: 15px;
+    }
+}
+/* Make Navigation Headings Bigger */
+
+header .nav-links a,
+header nav a,
+nav a,
+.nav-links a {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px;
+}
+/* ==========================================
+   ZM CUISINE - PREMIUM HERO BANNER
+========================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 680px;
+    padding: 65px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 78% 48%,
+            rgba(217, 173, 140, 0.28),
+            transparent 42%
+        ),
+        linear-gradient(
+            125deg,
+            #fffaf5 0%,
+            #f8eee5 55%,
+            #f2e0d0 100%
+        );
+}
+
+/* Subtle Background Decorations */
+
+.hero-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero-decoration-one {
+    width: 280px;
+    height: 280px;
+    top: -150px;
+    left: 38%;
+
+    border: 1px solid rgba(200, 107, 50, 0.16);
+}
+
+.hero-decoration-two {
+    width: 380px;
+    height: 380px;
+    bottom: -260px;
+    left: 5%;
+
+    border: 1px solid rgba(200, 107, 50, 0.13);
+}
+
+/* LEFT CONTENT */
+
+.hero-content {
+    flex: 0 0 44%;
+    max-width: 540px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Welcome Label */
+
+.hero .welcome {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 15px;
+    margin-bottom: 24px;
+
+    background: #f3dfce;
+    border: 1px solid #e7c6ad;
+    border-radius: 30px;
+
+    color: #9b542d;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.welcome-dot {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    flex-shrink: 0;
+
+    background: #c86b32;
+    border-radius: 50%;
+}
+
+/* Main Heading */
+
+.hero h1 {
+    margin: 0 0 24px;
+
+    color: #5a321f;
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(43px, 4.4vw, 65px);
+    line-height: 1.13;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+}
+
+.hero .hero-highlight {
+    display: block;
+    margin-top: 7px;
+
+    color: #c86b32;
+    font-style: italic;
+}
+
+/* Description */
+
+.hero .hero-text {
+    max-width: 430px;
+    margin-bottom: 30px;
+
+    color: #806657;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* Buttons */
+
+.hero .hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero .main-btn,
+.hero .second-btn {
+    min-height: 50px;
+    padding: 14px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.hero .main-btn {
+    color: #fffaf5;
+    background: #c86b32;
+    border: 2px solid #c86b32;
+
+    box-shadow: 0 8px 20px rgba(200, 107, 50, 0.22);
+}
+
+.hero .main-btn:hover {
+    background: #a95425;
+    border-color: #a95425;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(200, 107, 50, 0.28);
+}
+
+.hero-arrow {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.hero .second-btn {
+    color: #5a321f;
+    background: rgba(255, 250, 245, 0.7);
+    border: 2px solid #d9b69c;
+}
+
+.hero .second-btn:hover {
+    color: #a95425;
+    background: #fffaf5;
+    transform: translateY(-3px);
+}
+
+/* Small Footer Note */
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 35px;
+
+    color: #9b7862;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.hero-note-line {
+    width: 32px;
+    height: 2px;
+    flex-shrink: 0;
+
+    background: #c86b32;
+}
+
+/* ==========================================
+   FOOD IMAGE COLLAGE
+========================================== */
+
+.hero-image {
+    flex: 0 0 54%;
+    width: 54%;
+    max-width: 660px;
+    min-height: 560px;
+
+    position: relative;
+    display: block;
+}
+
+/* Large soft circle behind food images */
+
+.food-collage-background {
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 250, 245, 0.48);
+    border: 1px solid rgba(200, 107, 50, 0.18);
+
+    box-shadow:
+        0 0 0 18px rgba(255, 250, 245, 0.22),
+        0 0 0 38px rgba(217, 173, 140, 0.08);
+}
+
+/* Circular Food Frames */
+
+.hero-food-circle {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px;
+    border: 3px solid #fffaf5;
+    border-radius: 50%;
+
+    background: #fffaf5;
+
+    box-shadow:
+        0 0 0 2px #d9ad8c,
+        0 16px 35px rgba(90, 50, 31, 0.19);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-food-circle:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 0 3px #c86b32,
+        0 20px 40px rgba(90, 50, 31, 0.23);
+}
+
+.hero-food-circle img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Main Image - Pizza Cones */
+
+.circle-pizza {
+    width: 255px;
+    height: 255px;
+
+    top: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+.circle-pizza:hover {
+    transform: translateX(-50%) scale(1.04);
+}
+
+/* Arabic Paratha */
+
+.circle-paratha {
+    width: 165px;
+    height: 165px;
+
+    top: 5px;
+    right: 1%;
+
+    transform: rotate(7deg);
+    z-index: 4;
+}
+
+/* Steamed Kofta */
+
+.circle-kofta {
+    width: 175px;
+    height: 175px;
+
+    top: 65px;
+    left: 0;
+
+    transform: rotate(-6deg);
+    z-index: 4;
+}
+
+/* Fry Kabab */
+
+.circle-kebab {
+    width: 215px;
+    height: 215px;
+
+    right: 0;
+    bottom: 30px;
+
+    transform: rotate(5deg);
+    z-index: 4;
+}
+
+/* Egg Pudding */
+
+.circle-pudding {
+    width: 175px;
+    height: 175px;
+
+    left: 8%;
+    bottom: 5px;
+
+    transform: rotate(-5deg);
+    z-index: 4;
+}
+
+/* Decorative Stars */
+
+.food-decoration {
+    position: absolute;
+    color: #c86b32;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.food-decoration-one {
+    top: 28%;
+    right: 13%;
+    font-size: 30px;
+}
+
+.food-decoration-two {
+    bottom: 17%;
+    left: 42%;
+    font-size: 37px;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding: 55px 4%;
+        gap: 10px;
+    }
+
+    .hero-content {
+        flex-basis: 43%;
+    }
+
+    .hero-image {
+        flex-basis: 57%;
+        width: 57%;
+        min-height: 470px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 4.5vw, 52px);
+    }
+
+    .food-collage-background {
+        width: 310px;
+        height: 310px;
+    }
+
+    .circle-pizza {
+        width: 210px;
+        height: 210px;
+        top: 100px;
+    }
+
+    .circle-paratha {
+        width: 135px;
+        height: 135px;
+    }
+
+    .circle-kofta {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle-kebab {
+        width: 175px;
+        height: 175px;
+        bottom: 25px;
+    }
+
+    .circle-pudding {
+        width: 145px;
+        height: 145px;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: auto;
+        padding: 50px 6% 30px;
+
+        flex-direction: column;
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        flex: 1;
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .hero .welcome {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 8vw, 52px);
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+
+    .hero .hero-text {
+        max-width: 430px;
+        margin: 0 auto 25px;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .hero .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero .main-btn,
+    .hero .second-btn {
+        padding: 12px 17px;
+        font-size: 13px;
+    }
+
+    .hero-note {
+        justify-content: center;
+        margin-top: 25px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+        max-width: 440px;
+        min-height: 400px;
+        margin: 0 auto;
+    }
+
+    .food-collage-background {
+        width: 270px;
+        height: 270px;
+    }
+
+    .circle-pizza {
+        width: 175px;
+        height: 175px;
+        top: 85px;
+    }
+
+    .circle-paratha {
+        width: 105px;
+        height: 105px;
+        top: 5px;
+        right: 3%;
+    }
+
+    .circle-kofta {
+        width: 115px;
+        height: 115px;
+        top: 60px;
+        left: 0;
+    }
+
+    .circle-kebab {
+        width: 140px;
+        height: 140px;
+        right: 0;
+        bottom: 20px;
+    }
+
+    .circle-pudding {
+        width: 120px;
+        height: 120px;
+        left: 4%;
+        bottom: 0;
+    }
+
+    .food-decoration-one {
+        top: 25%;
+        right: 10%;
+        font-size: 23px;
+    }
+
+    .food-decoration-two {
+        bottom: 15%;
+        left: 45%;
+        font-size: 28px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-image {
+        min-height: 330px;
+    }
+
+    .food-collage-background {
+        width: 225px;
+        height: 225px;
+    }
+
+    .circle-pizza {
+        width: 145px;
+        height: 145px;
+        top: 75px;
+    }
+
+    .circle-paratha {
+        width: 85px;
+        height: 85px;
+    }
+
+    .circle-kofta {
+        width: 95px;
+        height: 95px;
+        top: 50px;
+    }
+
+    .circle-kebab {
+        width: 115px;
+        height: 115px;
+        bottom: 15px;
+    }
+
+    .circle-pudding {
+        width: 100px;
+        height: 100px;
+    }
+}
+/* =====================================
+   DELIVERY INFORMATION
+===================================== */
+
+.delivery-info {
+    margin-top: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Delivery Time Badge */
+
+.delivery-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 17px;
+
+    background: #fffaf5;
+    color: #9b542d;
+
+    border: 1px solid #e7c6ad;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 15px rgba(90, 50, 31, 0.08);
+}
+
+.delivery-icon {
+    font-size: 18px;
+}
+
+/* Urgent Order Message */
+
+.urgent-order {
+    margin-top: 13px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+    color: #806657;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.urgent-order a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #a95425;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.urgent-order a:hover {
+    color: #c86b32;
+    text-decoration: underline;
+}
+
+.whatsapp-arrow {
+    font-size: 16px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 700px) {
+
+    .delivery-info {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .delivery-time {
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .urgent-order {
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .urgent-order a {
+        justify-content: center;
+        font-size: 12px;
+    }
+}
+/* =====================================
+   PREMIUM NAVIGATION BOXES
+===================================== */
+
+header .nav-links a,
+header nav a,
+nav .nav-links a,
+.nav-links a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 15px !important;
+    margin: 0 3px;
+
+    border: 1px solid #ead5c4 !important;
+    border-radius: 12px !important;
+
+    background: rgba(255, 250, 245, 0.85) !important;
+
+    color: #5a321f !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+
+header .nav-links a:hover,
+header nav a:hover,
+nav .nav-links a:hover,
+.nav-links a:hover {
+    background: #c86b32 !important;
+    color: #ffffff !important;
+
+    border-color: #c86b32 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(200, 107, 50, 0.18);
+}
+
+/* Active Navigation Box */
+
+header .nav-links a.active,
+header nav a.active,
+.nav-links a.active {
+    background: #f0dfd1 !important;
+    border-color: #d9b69c !important;
+    color: #9b542d !important;
+}
+
+/* Mobile Navigation */
+
+@media (max-width: 700px) {
+    header .nav-links a,
+    header nav a,
+    nav .nav-links a,
+    .nav-links a {
+        padding: 9px 12px !important;
+        margin: 3px !important;
+        font-size: 14px !important;
+        border-radius: 10px !important;
+    }
+}
+/* MOVING DELIVERY ANNOUNCEMENT BAR */
+.delivery-announcement {
+width: 100%;
+overflow: hidden;
+background: #f3bc69;
+color: #412a0f;
+padding: 11px 0;
+white-space: nowrap;
+position: relative;
+z-index: 1000;
+}
+
+.announcement-text {
+display: inline-block;
+padding-left: 100%;
+font-size: 15px;
+font-weight: 600;
+letter-spacing: 1.2px;
+animation: moveAnnouncement 22s linear infinite;
+}
+
+.announcement-text span {
+margin: 0 35px;
+color: #f3d5b8;
+}
+
+@keyframes moveAnnouncement {
+0% {
+transform: translateX(0);
+}
+
+100% {
+    transform: translateX(-100%);
+}
+
+}
+
+@media (max-width: 600px) {
+.delivery-announcement {
+padding: 9px 0;
+}
+
+.announcement-text {
+    font-size: 11px;
+    animation-duration: 18s;
+}
+
+}
+/* =========================
+MENU GALLERY SECTION
+========================= */
+
+.menu-gallery-section {
+padding: 70px 7%;
+background: #fbf6f0;
+text-align: center;
+}
+
+.gallery-heading {
+max-width: 750px;
+margin: 0 auto 40px;
+}
+
+.gallery-heading .section-subtitle {
+color: #a66b4d;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
+.gallery-heading h2 {
+color: #573b2c;
+font-size: clamp(28px, 4vw, 42px);
+font-weight: 700;
+margin-bottom: 15px;
+}
+
+.gallery-heading > p:last-child {
+color: #76665c;
+font-size: 15px;
+line-height: 1.8;
+}
+
+.menu-gallery-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 28px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.menu-gallery-card {
+background: #ffffff;
+padding: 12px;
+border-radius: 16px;
+border: 1px solid #eaded3;
+box-shadow: 0 8px 25px rgba(87, 59, 44, 0.08);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-gallery-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 14px 30px rgba(87, 59, 44, 0.15);
+}
+
+.menu-gallery-card img {
+display: block;
+width: 100%;
+height: 340px;
+object-fit: contain;
+background: #fffaf5;
+border-radius: 10px;
+}
+
+.menu-gallery-card h3 {
+color: #70452f;
+font-size: 19px;
+margin: 16px 8px 10px;
+font-weight: 700;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+.menu-gallery-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 20px;
+}
+
+.menu-gallery-card img {
+    height: 300px;
+}
+
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+.menu-gallery-section {
+padding: 50px 5%;
+}
+
+.menu-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.menu-gallery-card img {
+    height: auto;
+    max-height: 500px;
+}
+
+.gallery-heading h2 {
+    font-size: 30px;
+}
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#menu-gallery {
+    scroll-margin-top: 100px;
+}
+/* HORIZONTAL MENU GALLERY */
+
+.menu-gallery-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 25px;
+max-width: 1200px;
+margin: 0 auto;
+align-items: stretch;
+}
+
+.menu-gallery-card {
+width: 100%;
+min-width: 0;
+background: #ffffff;
+padding: 12px;
+border-radius: 16px;
+border: 1px solid #eaded3;
+box-shadow: 0 8px 25px rgba(87, 59, 44, 0.10);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-gallery-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 14px 30px rgba(87, 59, 44, 0.16);
+}
+
+.menu-gallery-card img {
+display: block;
+width: 100%;
+height: 380px;
+object-fit: contain;
+border-radius: 10px;
+background: #fffaf5;
+}
+
+.menu-gallery-card h3 {
+color: #70452f;
+font-size: 19px;
+margin: 15px 5px 8px;
+text-align: center;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+.menu-gallery-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+}
+
+
+.menu-gallery-card img {
+    height: 320px;
+}
+
+
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+.menu-gallery-grid {
+grid-template-columns: 1fr;
+gap: 22px;
+}
+
+.menu-gallery-card img {
+    height: auto;
+    max-height: 500px;
+}
+
+
+}
+/* FORCE MENU POSTERS INTO ONE HORIZONTAL ROW */
+
+section.menu-gallery-section .menu-gallery-grid {
+display: flex !important;
+flex-direction: row !important;
+flex-wrap: nowrap !important;
+justify-content: center !important;
+align-items: stretch !important;
+gap: 20px !important;
+width: 100% !important;
+max-width: 1200px !important;
+margin: 0 auto !important;
+}
+
+section.menu-gallery-section .menu-gallery-card {
+flex: 1 1 0 !important;
+min-width: 0 !important;
+width: auto !important;
+margin: 0 !important;
+}
+
+section.menu-gallery-section .menu-gallery-card img {
+display: block !important;
+width: 100% !important;
+height: 340px !important;
+object-fit: contain !important;
+}
+
+/* MOBILE: KEEP ALL THREE IN ONE ROW */
+@media (max-width: 600px) {
+section.menu-gallery-section .menu-gallery-grid {
+gap: 8px !important;
+}
+
+section.menu-gallery-section .menu-gallery-card {
+    padding: 5px !important;
+}
+
+section.menu-gallery-section .menu-gallery-card img {
+    height: 180px !important;
+}
+
+section.menu-gallery-section .menu-gallery-card h3 {
+    font-size: 11px !important;
+    overflow-wrap: anywhere;
+}
+
+}
+/* ==============================
+   ZM CUISINE - PREMIUM MENU GALLERY
+============================== */
+
+.menu-gallery-card {
+    background: #fffdf9;
+    border: 1px solid #ead9ca;
+    border-radius: 18px;
+    padding: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(87, 59, 44, 0.08);
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+}
+
+/* Elegant Hover Effect */
+.menu-gallery-card:hover {
+    transform: translateY(-7px);
+    border-color: #bd8b68;
+    box-shadow: 0 15px 35px rgba(87, 59, 44, 0.17);
+}
+
+/* Poster Image */
+.menu-gallery-card img {
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* Slight Zoom on Hover */
+.menu-gallery-card:hover img {
+    transform: scale(1.025);
+}
+
+/* Professional Poster Title */
+.menu-gallery-card h3 {
+    color: #70452f;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin: 16px 5px 10px;
+    text-align: center;
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+    .menu-gallery-card {
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .menu-gallery-card h3 {
+        font-size: 12px;
+        margin: 10px 2px;
+    }
+}
+/* =====================================
+   ZM CUISINE - PREMIUM CONTACT SECTION
+===================================== */
+
+.contact {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #fbf6f0 0%,
+        #f3e5d8 50%,
+        #fbf6f0 100%
+    );
+    border-top: 1px solid #ead9ca;
+    overflow: hidden;
+}
+
+/* Small Heading */
+
+.contact .section-small {
+    color: #a66b4d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+/* Main Heading */
+
+.contact h2 {
+    color: #573b2c;
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+/* Description */
+
+.contact > p:not(.section-small) {
+    max-width: 600px;
+    margin: 0 auto 32px;
+    color: #76665c;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Social Media Buttons */
+
+.contact .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.contact .social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 145px;
+    padding: 14px 25px;
+    border: 1px solid #8d5d43;
+    border-radius: 50px;
+    background: #fffdf9;
+    color: #70452f;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(87, 59, 44, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Button Hover Effect */
+
+.contact .social-links a:hover {
+    background: #70452f;
+    color: #ffffff;
+    border-color: #70452f;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(87, 59, 44, 0.18);
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 55px 18px;
+    }
+
+    .contact h2 {
+        font-size: 29px;
+    }
+
+    .contact > p:not(.section-small) {
+        font-size: 14px;
+    }
+
+    .contact .social-links {
+        gap: 12px;
+    }
+
+    .contact .social-links a {
+        min-width: 125px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+.delivery-note {
+    color: #70452f;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* ZM CUISINE - MINIMAL FOOD BORDER */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* ZM CUISINE - CLEAN MINIMAL BORDER */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Food border */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("./images/food border.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  /* Make border subtle */
+  opacity: 0.25;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Keep banner content above border */
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero::after {
+    opacity: 0.15;
+  }
+}
+
+/* =====================================
+   ZM CUISINE - NEAT FOOD CARDS
+===================================== */
+
+.menu-section {
+    padding: 65px 6%;
+}
+
+.menu-container {
+    max-width: 1250px;
+    margin: 35px auto 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.food-card {
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(90, 50, 31, 0.08);
+}
+
+.food-image {
+    height: 175px;
+}
+
+.food-info {
+    padding: 14px;
+}
+
+.food-info h3 {
+    font-size: 17px;
+    line-height: 1.4;
+    min-height: 46px;
+    margin-bottom: 8px;
+}
+
+.food-quantity {
+    padding: 8px 10px;
+    gap: 7px;
+}
+
+.food-quantity span,
+.food-quantity strong {
+    font-size: 14px;
+}
+
+.deal-image {
+    height: 220px;
+}
+
+.daily-delights-container {
+    gap: 22px;
+}
+
+.daily-image {
+    height: 180px;
+}
+
+.daily-info {
+    padding: 15px;
+}
+
+.meal-grid {
+    gap: 20px;
+}
+
+.meal-card {
+    padding: 12px;
+}
+
+.meal-card img {
+    height: 175px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .menu-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .food-image {
+        height: 165px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .menu-container,
+    .daily-delights-container,
+    .deals-container,
+    .meal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .food-image,
+    .daily-image {
+        height: 135px;
+    }
+
+    .food-info,
+    .daily-info,
+    .deal-info {
+        padding: 10px;
+    }
+
+    .food-info h3,
+    .daily-info h3,
+    .deal-info h3 {
+        font-size: 14px;
+        min-height: 0;
+    }
+
+    .food-quantity span,
+    .food-quantity strong {
+        font-size: 12px;
+    }
+
+    .deal-image {
+        height: 145px;
+    }
+
+    .meal-card img {
+        height: 130px;
+    }
+}
+
+/* ===== DAILY DELIGHTS ===== */
+.daily-delights-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.daily-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.daily-image {
+    height: 170px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ===== FULL MEALS ===== */
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.meal-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.meal-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+/* ===== DEALS ===== */
+.deals-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.deal-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.deal-image {
+    height: 190px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 900px) {
+    .daily-delights-container,
+    .meal-grid,
+    .deals-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+    .daily-delights-container,
+    .meal-grid,
+    .deals-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .daily-image,
+    .meal-card img {
+        height: 125px;
+    }
+
+    .deal-image {
+        height: 135px;
+    }
+}
+
+/* ===== BROWN BORDER FOR ALL FOOD CARDS ===== */
+
+.food-card,
+.daily-card,
+.meal-card,
+.deal-card,
+.menu-gallery-card {
+    border: 2px solid #8B5E3C !important;
+    border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(101, 67, 33, 0.10);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Soft brown hover effect */
+.food-card:hover,
+.daily-card:hover,
+.meal-card:hover,
+.deal-card:hover,
+.menu-gallery-card:hover {
+    border-color: #654321 !important;
+    box-shadow: 0 6px 16px rgba(101, 67, 33, 0.18);
+}
+
+/* ===== SMALLER CARDS + MORE GAP ===== */
+
+/* Daily Delights */
+.daily-delights-container {
+    gap: 28px !important;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.daily-card {
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+}
+
+.daily-image {
+    height: 150px !important;
+}
+
+/* Full Meal */
+.meal-grid {
+    gap: 28px !important;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.meal-card {
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+    padding: 10px;
+}
+
+.meal-card img {
+    height: 150px !important;
+    object-fit: cover;
+}
+
+/* Dessert */
+.dessert-container {
+    gap: 28px !important;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.dessert-card {
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+}
+
+.dessert-image {
+    height: 150px !important;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Mobile screen */
+@media (max-width: 600px) {
+    .daily-delights-container,
+    .meal-grid,
+    .dessert-container {
+        gap: 18px !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .daily-card,
+    .meal-card,
+    .dessert-card {
+        max-width: 100%;
+    }
+
+    .daily-image,
+    .meal-card img,
+    .dessert-image {
+        height: 120px !important;
+    }
+}
+
+/* ===== DESSERT CARDS: SMALLER + MORE GAP ===== */
+
+.dessert-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px !important;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 15px;
+    justify-items: center;
+}
+
+.dessert-card {
+    width: 100%;
+    max-width: 290px;
+    min-width: 0;
+    justify-self: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.dessert-image,
+.dessert-card img {
+    width: 100%;
+    height: 135px !important;
+    object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .dessert-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .dessert-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px !important;
+        padding: 0 10px;
+    }
+
+    .dessert-card {
+        max-width: 100%;
+    }
+
+    .dessert-image,
+    .dessert-card img {
+        height: 115px !important;
+    }
+}
+
+/* ===== ZM CUISINE: FOOD BORDER + ORIGINAL BACKGROUND ===== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    background-color: #f0c486 !important;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("./images/food border.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== ZM CUISINE FOOD BORDER FINAL ===== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+}
+
+.hero::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+
+    background-image: url("./images/food%20border.jpg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+
+    opacity: 1 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
